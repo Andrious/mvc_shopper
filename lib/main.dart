@@ -1,8 +1,6 @@
 import 'package:mvc_shopper/src//view.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends AppStatefulWidget {
   MyApp({Key key}) : super(key: key);

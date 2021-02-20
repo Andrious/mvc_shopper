@@ -1,8 +1,6 @@
 
 export 'package:mvc_application/view.dart';
 
-export 'package:provider/provider.dart';
-
 export 'package:mvc_shopper/src/app/view/login.dart';
 
 export 'package:mvc_shopper/src/app/view/shopper_app.dart';

@@ -10,8 +10,8 @@ import 'package:mvc_shopper/src/view.dart';
 
 import 'package:mvc_shopper/src/controller.dart';
 
-//extends ChangeNotifier {
-class CartModel extends ControllerMVC {
+
+class CartModel extends ControllerMVC {    //extends ChangeNotifier {
   CartModel([StateMVC state]) : super(state);
 
   /// The static fields preserve the cart's content.
