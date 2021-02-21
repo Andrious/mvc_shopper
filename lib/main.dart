@@ -1,4 +1,4 @@
-import 'package:mvc_shopper/src//view.dart';
+import 'package:mvc_shopper/src/view.dart';
 
 void main() => runApp(MyApp());
 

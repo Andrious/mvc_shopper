@@ -11,8 +11,8 @@ import 'package:mvc_shopper/src/view.dart';
 import 'package:mvc_shopper/src/controller.dart';
 
 
-class CartModel extends ControllerMVC {    //extends ChangeNotifier {
-  CartModel([StateMVC state]) : super(state);
+class Cart extends ControllerMVC {
+  Cart([StateMVC state]) : super(state);
 
   /// The static fields preserve the cart's content.
 
@@ -47,7 +47,6 @@ class CartModel extends ControllerMVC {    //extends ChangeNotifier {
 
   /// Adds [item] to cart. This is the only way to modify the cart from outside.
   void add(Item item, StateMVC state) {
-    //
     _itemIds.add(item.id);
 
     _itemMaps[item.id] = state;
@@ -58,7 +57,6 @@ class CartModel extends ControllerMVC {    //extends ChangeNotifier {
   }
 
   void remove(Item item) {
-    //
     _itemIds.remove(item.id);
 
     final state = _itemMaps.remove(item.id);

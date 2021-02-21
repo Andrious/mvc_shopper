@@ -3,11 +3,11 @@ import 'package:mvc_shopper/src/view.dart';
 class ShopperApp extends AppState {
   ShopperApp()
       : super(
-          title: 'Provider Demo',
+          title: 'MVC Demo',
           initialRoute: '/',
           routes: {
             '/': (context) => const MyLogin(),
-            '/catalog': (context) => const MyCatalog(),
+            '/catalog': (context) => MyCatalog(),
             '/cart': (context) => const MyCart(),
           },
           debugShowCheckedModeBanner: false,

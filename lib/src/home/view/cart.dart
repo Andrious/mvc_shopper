@@ -4,7 +4,7 @@
 
 import 'package:mvc_shopper/src/view.dart';
 
-import 'package:mvc_shopper/src/model.dart';
+import 'package:mvc_shopper/src/controller.dart';
 
 class MyCart extends StatefulWidget {
   const MyCart({Key key}) : super(key: key);
@@ -38,9 +38,9 @@ class _MyCartState extends StateMVC<MyCart> {
 }
 
 class _CartList extends StatelessWidget {
-  _CartList(StateMVC state) : cart = CartModel(state);
+  _CartList(StateMVC state) : cart = Cart(state);
 
-  final CartModel cart;
+  final Cart cart;
 
   @override
   Widget build(BuildContext context) =>
@@ -69,10 +69,10 @@ class _CartList extends StatelessWidget {
 
 class _CartTotal extends StatelessWidget {
   _CartTotal({Key key})
-      : cart = CartModel(),
+      : cart = Cart(),
         super(key: key);
 
-  final CartModel cart;
+  final Cart cart;
 
   @override
   Widget build(BuildContext context) => SizedBox(

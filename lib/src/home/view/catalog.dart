@@ -2,32 +2,32 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:mvc_shopper/src/view.dart';
-
 import 'package:mvc_shopper/src/model.dart';
 
+import 'package:mvc_shopper/src/view.dart';
+
+import 'package:mvc_shopper/src/controller.dart';
+
 class MyCatalog extends StatelessWidget {
-  const MyCatalog({Key key}) : super(key: key);
+  MyCatalog({Key key}) : super(key: key) {
+    final cart = Cart();
+    cart.catalog = CatalogModel();
+  }
 
   @override
-  Widget build(BuildContext context) {
-    final cart = CartModel();
-
-    cart.catalog = CatalogModel();
-
-    return Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          _MyAppBar(),
-          const SliverToBoxAdapter(child: SizedBox(height: 12)),
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-                (context, index) => _MyListItem(index)),
-          ),
-        ],
-      ),
-    );
-  }
+  Widget build(BuildContext context) => Scaffold(
+        body: CustomScrollView(
+          slivers: [
+            _MyAppBar(),
+            const SliverToBoxAdapter(child: SizedBox(height: 12)),
+            SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (context, index) => _MyListItem(index),
+              ),
+            ),
+          ],
+        ),
+      );
 }
 
 class _AddButton extends StatefulWidget {
@@ -38,10 +38,10 @@ class _AddButton extends StatefulWidget {
 }
 
 class _AddButtonState extends StateMVC<_AddButton> {
-  _AddButtonState() : super(CartModel()) {
+  _AddButtonState() : super(Cart()) {
     cart = controller;
   }
-  CartModel cart;
+  Cart cart;
 
   @override
   Widget build(BuildContext context) {

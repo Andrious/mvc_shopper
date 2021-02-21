@@ -16,7 +16,7 @@ class CatalogModel {
   CatalogModel._();
   static CatalogModel _this;
 
-  static List<String> itemNames = [
+  final List<String> _itemNames = [
     'Code Smell',
     'Control Flow',
     'Interpreter',
@@ -36,8 +36,8 @@ class CatalogModel {
 
   /// Get item by [id].
   ///
-  /// In this sample, the catalog is infinite, looping over [itemNames].
-  Item getById(int id) => Item(id, itemNames[id % itemNames.length]);
+  /// In this sample, the catalog is infinite, looping over [_itemNames].
+  Item getById(int id) => Item(id, _itemNames[id % _itemNames.length]);
 
   /// Get item by its position in the catalog.
   Item getByPosition(int position) {
